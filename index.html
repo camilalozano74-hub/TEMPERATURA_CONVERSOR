@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conversor moderno de temperaturas entre Celsius, Fahrenheit y Kelvin." />
+  <title>Conversor de Temperaturas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="converter-card" aria-labelledby="page-title">
+      <div class="brand-mark" aria-hidden="true">🌡️</div>
+      <p class="eyebrow">Herramienta rápida y precisa</p>
+      <h1 id="page-title">Conversor de Temperaturas</h1>
+      <p class="subtitle">Convierte fácilmente entre Celsius, Fahrenheit y Kelvin.</p>
+
+      <form id="converter-form" novalidate>
+        <div class="field-group">
+          <label for="temperature-input">Temperatura</label>
+          <input
+            id="temperature-input"
+            type="number"
+            inputmode="decimal"
+            step="any"
+            placeholder="Ej. 25"
+            autocomplete="off"
+            aria-describedby="input-error"
+          />
+          <small id="input-error" class="error-message" role="alert"></small>
+        </div>
+
+        <div class="unit-grid">
+          <div class="field-group">
+            <label for="from-unit">De</label>
+            <select id="from-unit">
+              <option value="C">Celsius (°C)</option>
+              <option value="F">Fahrenheit (°F)</option>
+              <option value="K">Kelvin (K)</option>
+            </select>
+          </div>
+
+          <button id="swap-button" class="icon-button" type="button" title="Intercambiar unidades" aria-label="Intercambiar unidades">
+            ⇄
+          </button>
+
+          <div class="field-group">
+            <label for="to-unit">A</label>
+            <select id="to-unit">
+              <option value="F">Fahrenheit (°F)</option>
+              <option value="C">Celsius (°C)</option>
+              <option value="K">Kelvin (K)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="clear-button" class="button secondary" type="button">Limpiar</button>
+          <button class="button primary" type="submit">Convertir</button>
+        </div>
+      </form>
+
+      <section id="result-panel" class="result-panel" aria-live="polite">
+        <div class="result-topline">
+          <span>Resultado</span>
+          <span id="temperature-status" class="status-badge neutral">—</span>
+        </div>
+        <p id="result-value" class="result-value">—</p>
+        <p id="result-description" class="result-description">Ingresa una temperatura para comenzar.</p>
+      </section>
+
+      <p class="footer-note">Compatible con computadores, tabletas y celulares.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
